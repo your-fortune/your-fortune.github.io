@@ -13,5 +13,9 @@ function fortune($options='') {
 		$result = "command '$cmd' failed with exit code $error_code, 
 							 see <a href=\"http://tldp.org/LDP/abs/html/exitcodes.html\">reference</a>";
 	}
-	return $result;
+
+  $result = preg_replace('/\n\s*?--(.*)\n/',"<cite>&mdash;$1</cite>",$result);
+  $result = preg_replace('/\n/',' ', $result);
+  $result = preg_replace('/A\:/', "<br>A:", $result);
+return $result;
 }
