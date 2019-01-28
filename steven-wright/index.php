@@ -14,6 +14,12 @@
 <meta name="theme-color" content="#ffffff">
 <meta name="keywords" content="Steven Wright, surreal humor, one-liners, deadpan, wit/word play, observational comedy, Musical comedy, Anti-humor">
 <meta name="description" content="Refresh the page for a new one liner.">
+<meta property="og:image:width" content="279">
+<meta property="og:image:height" content="279">
+<meta property="og:title" content="Steven Wright Aphorisms">
+<meta property="og:description" content="The art of the deadpan one-liner.  New quotes on each page refresh.">
+<meta property="og:url" content="https://steven-wright.elementalidad.com">
+<meta property="og:image" content="https://steven-wright.elementalidad.com/og-image.jpg">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
