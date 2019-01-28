@@ -12,9 +12,9 @@
 <meta name="application-name" content="Steven Wright Aphorisms">
 <meta name="msapplication-TileColor" content="#da532c">
 <meta name="theme-color" content="#ffffff">
-<meta name="keywords" content="Steven Wright, surreal humor, one-liners, deadpan, wit/word play, observational comedy, Musical comedy, Anti-humor" />
-<meta name="description" content="Refresh the page for a new one liner." />
-<link media="all" href="/style.css" rel="stylesheet"/>
+<meta name="keywords" content="Steven Wright, surreal humor, one-liners, deadpan, wit/word play, observational comedy, Musical comedy, Anti-humor">
+<meta name="description" content="Refresh the page for a new one liner.">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="page"><div id="content">

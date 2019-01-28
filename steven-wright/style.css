@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
+
+html,
+body,
+#page {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-size: 3em;
+  font-size: 5vw;
+  line-height: 1.2;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+#page {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem 0 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+#content {
+  padding: 7%;
+}
+
+cite {
+  font-size: .7em;
+  display: block;
+  text-align: right;
+}
+
+blockquote {
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 50rem) {
+  body {
+    font-size: 2.5rem;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fadeInUp {
+  animation-duration: 1s;
+  animation-delay: .5s;
+  animation-fill-mode: both;
+  animation-name: fadeInUp;
+}
