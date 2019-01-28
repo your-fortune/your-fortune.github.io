@@ -24,7 +24,7 @@
 </head>
 <body>
 <div id="page"><div id="content">
-<blockquote class="fadeInUp"></blockquote>
+<blockquote class="fadeInUp" title="Refresh page to load another quote"></blockquote>
 </div></div>
 <script>
 	const data = <?php include('data/steven-wright.json'); ?>;
