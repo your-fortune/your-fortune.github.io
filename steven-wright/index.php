@@ -21,7 +21,7 @@
 <div id="content">
 <?php include('../fortune.inc'); ?>
 <blockquote class="fadeInUp">
-<?php print fortune('-s /home/jrguitar21/www/fortune.elementalidad.com/data/steven-wright');?>
+<?php print fortune('-s ' . dirname(__FILE__) . '/data/steven-wright');?>
 </blockquote>
 </div></div>
 </body>
