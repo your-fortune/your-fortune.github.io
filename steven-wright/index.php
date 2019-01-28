@@ -17,12 +17,19 @@
 <link media="all" href="/style.css" rel="stylesheet"/>
 </head>
 <body>
-<div id="page">
-<div id="content">
-<?php include('../fortune.inc'); ?>
-<blockquote class="fadeInUp">
-<?php print fortune('-s ' . dirname(__FILE__) . '/data/steven-wright');?>
-</blockquote>
+<div id="page"><div id="content">
+<blockquote class="fadeInUp"></blockquote>
 </div></div>
+<script>
+	const data = <?php include('data/steven-wright.json'); ?>;
+	let i = Math.floor(Math.random() * (data.quotes.length));
+	let b = document.getElementsByTagName("blockquote")[0];
+	b.innerHTML = data.quotes[i].quote.replace(/A\:/, '<br>A:');
+	if (data.quotes[i].author) {
+		let c = document.createElement("cite");
+		c.innerHTML = '&mdash;&nbsp;' + data.quotes[i].author;
+		b.appendChild(c);
+	}
+</script>
 </body>
 </html>
