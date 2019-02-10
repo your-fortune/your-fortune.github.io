@@ -10,7 +10,7 @@
 <div class="about">
 <div class="description">{{ description }}</div>
 {%- if page.layout == 'default' %}
-<div class="action"><em>{{ site.fortune.action }}</em></div>
+<div class="action"><em><span class="count"></span> {{ site.fortune.action }}</em></div>
 {%- endif %}
 </div>
 <nav aria-label="{{ site.data.navigation.title }}" tabindex="-1">
