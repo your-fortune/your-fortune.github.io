@@ -1,0 +1,22 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Alegreya:500');
+
+body {
+  font-family: 'Alegreya', serif;
+  font-size: 25px;
+
+  @media (max-width: 70em) {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 70rem) {
+  br,
+  br::after {
+    content: '';
+    display: table;
+    width: 100%;
+  }
+}

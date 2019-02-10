@@ -1,0 +1,13 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Pompiere');
+
+body {
+  font-family: Pompiere, cursive;
+  font-size: 5vw;
+
+  @media (max-width: 70rem) {
+    font-size: 22px;
+  }
+}

@@ -1,0 +1,14 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Love+Ya+Like+A+Sister');
+
+body {
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 4vw;
+
+  @media (max-width: 70rem) {
+    font-size: 22px;
+  }
+}
+

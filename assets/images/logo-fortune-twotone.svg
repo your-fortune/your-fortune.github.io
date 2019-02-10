@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+<g fill="none" stroke="#000" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+  <path fill="#000" fill-rule="evenodd" d="M219,371a31,31 0 1,0 62,0a31,31 0 1,0 -62,0z M40,371 250,492.5 460,371 250,250z"/>
+  <polygon points="250,7.5 250,250 460,371 460,129"/>
+  <polyline points="250,250 40,371 40,129 40,128 250,7.5 250,250.5"/>
+</g>
+<circle cx="358" cy="186" r="24"/>
+<circle cx="142" cy="186" r="24"/>
+</svg>

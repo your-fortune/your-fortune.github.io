@@ -1,0 +1,30 @@
+{%- assign description = site.description %}
+{%- if page.description %}
+{%- assign description = page.description %}
+{%- endif %}
+<div id="skip">
+  <a href="#sidebar">Skip to navigation</a>
+  <a href="#main-content">Skip to main content</a>
+</div>
+<section id="sidebar" aria-expanded="false" tabindex="0" aria-label="sidebar">
+<div class="about">
+<div class="description">{{ description }}</div>
+<div class="action"><em>{{ site.fortune.action }}</em></div>
+</div>
+<nav aria-label="{{ site.data.navigation.title }}" tabindex="-1">
+<ul>
+{%- for item in site.data.navigation.pages %}
+{%- assign current = '' %}
+{%- assign class = '' %}
+{%- if page.permalink == item.url %}
+{%- assign current = ' <span class="visually-hidden">current page,</span>' %}
+{%- assign class = 'class="active"' %}
+{%- endif %}
+<li><a href="{{ item.url }}"{{ class }}>{{ item.title }} {{ current }}</a></li>
+{%- endfor %}
+</ul>
+</nav>
+</section>
+<button id="toggle" aria-label="toggle sidebar">
+<img src="{{'/assets/images/logo-fortune.svg' | append: cache_buster | relative_url }}" width="20" height="20"/>
+</button>

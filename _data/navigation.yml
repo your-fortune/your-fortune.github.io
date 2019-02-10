@@ -1,0 +1,26 @@
+title: Main Menu
+pages:
+  - title: Home
+    url: /
+
+  - title: The Dhammapada
+    url: /dhammapada
+
+  - title: The Tao Te Ching
+    url: /tao-te-ching
+
+  - title: Murphy's Law
+    url: /murphys-law
+
+  - title: Open​BSD
+    url: /openbsd
+
+  - title: Paul Graham
+    url: /paul-graham
+
+  - title: Steven Wright
+    url: /steven-wright
+
+  - title: Credits
+    url: /credits
+

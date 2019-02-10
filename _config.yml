@@ -1,0 +1,25 @@
+# Jekyll basic configurations
+url: https://your-fortune.github.io
+baseurl: ""
+permalink: pretty
+title: Your Fortune
+description: Bringing the unix `fortune` command to the Web. New fortunes on each page refresh.
+
+# SEO and Plugin configuration
+keywords: fortune, linux, bsd, Steven Wright, surreal humor, one-liners, deadpan, wit/word play, observational comedy, Musical comedy, Anti-humor
+google_analytics: UA-133654178-1
+
+# Custom site-wide variables
+fortune:
+  action: Refresh the page for a new fortune.
+
+# Process static pages
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - fortune.sublime-project
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore

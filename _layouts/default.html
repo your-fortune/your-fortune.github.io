@@ -1,0 +1,15 @@
+<html>
+<head>
+{% include head.html -%}
+</head>
+<body>
+{% include sidebar.html -%}
+<section id="main-content" role="main" class="outer"><div class="inner"><div class="content">
+<blockquote class="fadeInUp" title="{{ site.fortune.action }}"></blockquote>
+</div></div></section>
+<script>
+const data = {% include {{ page.dataset }} %};
+</script>
+{% include footer.html -%}
+</body>
+</html>

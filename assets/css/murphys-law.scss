@@ -1,0 +1,13 @@
+---
+---
+
+@import url('https://fonts.googleapis.com/css?family=Life+Savers:700');
+
+body {
+  font-family: 'Life Savers', cursive;
+  font-size: 3.5vw;
+
+  @media (max-width: 70rem) {
+    font-size: 26px;
+  }
+}
