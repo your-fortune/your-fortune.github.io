@@ -1,13 +1,7 @@
 title: Main Menu
 pages:
-  - title: Home
+  - title: Miscellaneous
     url: /
-
-  - title: The Dhammapada
-    url: /dhammapada
-
-  - title: The Tao Te Ching
-    url: /tao-te-ching
 
   - title: Murphy's Law
     url: /murphys-law
@@ -20,6 +14,12 @@ pages:
 
   - title: Steven Wright
     url: /steven-wright
+
+  - title: The Dhammapada
+    url: /dhammapada
+
+  - title: The Tao Te Ching
+    url: /tao-te-ching
 
   - title: About
     url: /about
