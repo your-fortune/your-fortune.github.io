@@ -1,0 +1,10 @@
+---
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="/sitemap.xsl"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in site.data.navigation.pages %}
+<url><loc>{{ item.url | absolute_url }}</loc><changefreq>daily</changefreq><priority>1.0</priority></url>
+{%- endfor %}
+</urlset>

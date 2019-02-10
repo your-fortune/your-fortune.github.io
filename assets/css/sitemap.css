@@ -1,0 +1,36 @@
+
+
+body {
+  background-color: #FFF;
+  font-family: Verdana,sans-serif;
+  font-size: 10pt;
+}
+h1 {
+  font-size: 1.25em;
+}
+table {
+  background-color: #CDCDCD;
+  margin:10px 0pt 15px;
+  font-size: 8pt;
+  width: 100%;
+  text-align: left;
+}
+table thead tr th,
+table tfoot tr th {
+  background-color: #E6EEEE;
+  border: 1px solid #FFF;
+  font-size: 8pt;
+  padding: 3px;
+}
+table thead tr .header {
+  cursor: pointer;
+}
+table tbody td {
+  color: #3D3D3D;
+  padding: 3px;
+  background-color: #FFF;
+  vertical-align: top;
+}
+table tbody tr:nth-child(odd) td {
+  background-color: #EFEFEF;
+}
