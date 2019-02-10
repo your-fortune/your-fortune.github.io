@@ -12,3 +12,7 @@ body {
   }
 }
 
+br,
+br::after {
+  content: ' ';
+}
