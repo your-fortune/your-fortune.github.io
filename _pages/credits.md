@@ -2,11 +2,18 @@
 layout: normal
 permalink: /credits
 title: Credits
+description: Special thanks and credit where it is due
 ---
 
-* Fortunes brought to you by FreeBSD: src/games/fortune/datfiles/fortunes,v 1.179.2.8 2006/08/12 20:30:09 yar Exp
-* Logo inspriation by "Dice" by `my name is mud` from the Noun Project
-* The following fonts provided by Google Fonts:
+# Special thanks to
+
+* English translation of the Tao Te Ching by Peter Merel, 1995.
+* Steven Wright quotes compiled by Mark Toland (Zargon's Web World), 1999.
+* Various fortune files compiled by OpenBSD and/or FreeBSD, 2006.
+* Logo inspriation from "Dice" by my name is mud (Noun Project), 2018.
+* Font hosting by Google Fonts.
+* Web hosting by GitHub Pages.
+* Type designers:
     * [Libre Baskerville](https://fonts.google.com/specimen/Libre+Baskerville) by Impallari Type
     * [Life Savers](https://fonts.google.com/specimen/Life+Savers) by Impallari Type
     * [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono) by Christian Robertson
@@ -15,4 +22,3 @@ title: Credits
     * [Forum](https://fonts.google.com/specimen/Forum) by Denis Masharov
     * [Alegreya](https://fonts.google.com/specimen/Alegreya) by Huerta Tipográfica
     * [Pompiere](https://fonts.google.com/specimen/Pompiere) by Karolina Lach
-* Free web hosting by GitHub Pages
