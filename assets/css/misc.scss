@@ -1,8 +1,18 @@
 ---
 ---
 
-@import url('https://fonts.googleapis.com/css?family=Source+Serif+Pro:600');
+@import url('https://fonts.googleapis.com/css?family=Forum');
 
 body {
-  font-family: 'Source Serif Pro', serif;
+  font-family: 'Forum', serif;
+  font-size: 3.4vw;
+  line-height: 1.1;
+
+  @media (max-width: 70rem) {
+    font-size: 28px;
+  }
+}
+
+.content {
+  max-width: 45rem;
 }
