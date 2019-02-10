@@ -21,6 +21,9 @@ pages:
   - title: Steven Wright
     url: /steven-wright
 
+  - title: About
+    url: /about
+
   - title: Credits
     url: /credits
 

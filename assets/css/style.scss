@@ -84,6 +84,7 @@ a {
   vertical-align: middle;
   text-align: center;
   transition: all .2s ease-out;
+  position: relative;
 }
 
 .content {
@@ -166,11 +167,6 @@ code {
     ~ #main-content {
       width: calc(100% - 17rem);
       transition: all .2s ease-out;
-
-      .inner {
-        transform: scale(.8);
-        transform-origin: center left;
-      }
     }
   }
 }
