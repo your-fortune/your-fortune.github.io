@@ -1,6 +1,6 @@
 ---
 permalink: /
-title: Your Fortune
+title: Miscellaneous meditations
 description:  A selection of miscellaneous meditations.
 dataset: data/misc.json
 style: misc.css
