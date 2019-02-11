@@ -5,12 +5,8 @@
 <body>
 {% include sidebar.html -%}
 <section id="main-content" role="main" class="outer"><div class="inner"><div class="content">
-<blockquote class="fadeInUp" title="{{ site.fortune.action }}"></blockquote>
+{{ content }}
 </div></div></section>
-<script>
-const quotes = {% include {{ page.dataset }} %};
-</script>
-<script src="{{'/assets/js/quotes.js' | append: cache_buster | relative_url }}"></script>
 {% include footer.html -%}
 </body>
 </html>

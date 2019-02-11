@@ -1,4 +1,5 @@
 ---
+layout: quote
 permalink: /dhammapada
 title: Dhammapada
 description: Randomly selected verses from the Dhammapada—the seminal work of early Indian thought.

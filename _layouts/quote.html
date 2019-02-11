@@ -1,0 +1,9 @@
+---
+layout: default
+---
+<blockquote class="fadeInUp" title="{{ site.fortune.action }}"></blockquote>
+{{ content }}
+<script>
+const quotes = {% include {{ page.dataset }} %};
+</script>
+<script src="{{'/assets/js/quotes.js' | append: cache_buster | relative_url }}"></script>

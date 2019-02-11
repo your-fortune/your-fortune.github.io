@@ -1,4 +1,5 @@
 ---
+layout: quote
 permalink: /
 title: Miscellaneous meditations
 description:  A selection of miscellaneous meditations.

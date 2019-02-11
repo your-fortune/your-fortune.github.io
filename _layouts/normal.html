@@ -1,12 +1,5 @@
-<html>
-<head>
-{% include head.html -%}
-</head>
-<body>
-{% include sidebar.html -%}
-<section id="main-content" role="main" class="outer"><div class="inner"><div class="content">
+---
+layout: default
+---
+<link rel="stylesheet" href="{{ '/assets/css/normal.css' | append: cache_buster }}">
 {{ content }}
-</div></div></section>
-{% include footer.html -%}
-</body>
-</html>

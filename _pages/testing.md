@@ -1,4 +1,5 @@
 ---
+layout: quote
 permalink: /testing
 title: Testing
 dataset: data/testing.json
