@@ -10,6 +10,7 @@
 <script>
 const data = {% include {{ page.dataset }} %};
 </script>
+<script src="{{'/assets/js/quotes.js' | append: cache_buster | relative_url }}"></script>
 {% include footer.html -%}
 </body>
 </html>
