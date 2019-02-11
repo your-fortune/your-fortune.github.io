@@ -20,7 +20,9 @@ You can contribute to site improvements (see [GitHub pages](https://help.github.
 
 You may also contribute data sets, until we're able to write the generator script, each contribution should contain:
 
-* the `_includes/data/dataset.json` file, renamed to something relevant.
+* the `_includes/data/dataset.json` file, renamed to something relevant, ensure
+  your JSON file [passes JSONlint validation](https://jsonlint.com/), and is
+  formatted with one quote per line.
 * the `_pages/dataset.md` file to configure and expose the page on the web.
 * an entry in `_data/navigation.yml` to link the page.
 
