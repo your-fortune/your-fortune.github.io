@@ -4,21 +4,29 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
 
 :root {
-  --bg: #fefefe;
-  --color: #2b2b2b;
+  --main-bg: #fefefe;
+  --main-color: #2b2a2a;
+  --sidebar-bg: #2b2a2a;
+  --sidebar-color: #fff;
+  --nav-color: #eee;
+  --nav-bg-hover: #555;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --bg: #2b2b2b;
-    --color: #02da02;
+    --main-bg: #1b1a1a;
+    --main-color: #cc9a32;
+    --sidebar-bg: #2b2a2a;
+    --sidebar-color: #cbcaca;
+    --nav-color: #bbb;
+    --nav-bg-hover: #333;
   }
 }
 
 html,
 body {
-  background: var(--bg);
-  color: var(--color);
+  background: var(--main-bg);
+  color: var(--main-color);
   height: 100%;
   box-sizing: border-box;
 }
@@ -57,8 +65,8 @@ a {
 
   z-index: 1;
   display: block;
-  background: #2a2a2a;
-  color: #fff;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-color);
   text-decoration: none;
   padding: .2rem 1rem;
 
@@ -141,8 +149,8 @@ code {
   top: 0;
   bottom: 0;
   padding: 10px 0 0;
-  background: #2a2a2a;
-  color: #eee;
+  background: var(--sidebar-bg);
+  color: var(--sidebar-color);
   outline: 0;
   overflow-x: scroll;
   transition: all .2s ease-out;
@@ -188,7 +196,7 @@ nav {
     font-family: sans-serif;
     text-transform: uppercase;
     letter-spacing: .05em;
-    color: #eee;
+    color: var(--nav-color);
     background: transparent;
     text-decoration: none;
     padding: .5rem 1.3rem;
@@ -197,16 +205,8 @@ nav {
     &.active,
     &:hover,
     &:focus {
-      background: #555;
+      background: var(--nav-bg-hover);
     }
-  }
-
-  button::after {
-    content: '✖';
-    color: #eee;
-    font-size: 20px;
-    line-height: 1em;
-    position: absolute;
   }
 }
 
@@ -226,7 +226,7 @@ nav {
 }
 
 .description {
-  color: #fff;
+  color: var(--sidebar-color);
 }
 
 .visually-hidden {
