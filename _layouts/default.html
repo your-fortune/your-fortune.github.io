@@ -8,7 +8,7 @@
 <blockquote class="fadeInUp" title="{{ site.fortune.action }}"></blockquote>
 </div></div></section>
 <script>
-const data = {% include {{ page.dataset }} %};
+const quotes = {% include {{ page.dataset }} %};
 </script>
 <script src="{{'/assets/js/quotes.js' | append: cache_buster | relative_url }}"></script>
 {% include footer.html -%}

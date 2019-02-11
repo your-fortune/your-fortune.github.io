@@ -56,26 +56,26 @@ var loadQuote = function (quoteSource) {
   if (typeof window.location.hash.split('#')[1] !== 'undefined'
     && typeof parseInt(window.location.hash.split('#')[1], 10) === 'number') {
     j = parseInt(window.location.hash.split('#')[1], 10) - 1;
-    if (j < data.quotes.length) {
+    if (j < quotes.data.length) {
       i = j;
     }
   }
   if (!i || (window.wasReloaded() && quoteSource === RANDOM_SEED)) {
-    i = getRandomSeed(j, data.quotes.length);
+    i = getRandomSeed(j, quotes.data.length);
   }
 
   var b = document.getElementsByTagName("blockquote")[0];
-  var q = data.quotes[i].quote;
+  var q = quotes.data[i].quote;
 
   b.innerHTML = q.toHtml().toParagraph();
-  if (data.quotes[i].author) {
+  if (quotes.data[i].author) {
     var c = document.createElement("cite");
-    c.innerHTML = '–&nbsp;' + data.quotes[i].author.toHtml();
+    c.innerHTML = '–&nbsp;' + quotes.data[i].author.toHtml();
     b.appendChild(c);
   }
 
   var x = i+1;
-  var y = data.quotes.length;
+  var y = quotes.data.length;
   var z = document.getElementsByClassName("count");
   var t = updatePageTitle(x, y);
 
