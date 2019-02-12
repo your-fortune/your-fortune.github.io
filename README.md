@@ -6,9 +6,9 @@ This project started as a server-side php script, and morphed into a client-side
 
 ### Roadmap
 
-* -Refactor for GitHub pages-
-* -Add a Jekyll page for each fortune datasource.-
-* -Add site navigation.-
+* <del>Refactor for GitHub pages</del>
+* <del>Add a Jekyll page for each fortune datasource.</del>
+* <del>Add site navigation.</del>
 * Add additional fortune sources.
 * Automate the conversion of fortune data files into JSON files.
 * Image file & meme generator.
