@@ -6,9 +6,11 @@ This project started as a server-side php script, and morphed into a client-side
 
 ### Roadmap
 
-* Create a 'generator' script to parse the fortune data files and create JSON and YAML files for consumption.
-* Add a Jekyll page for each fortune datasource.
-* Add site navigation.
+* -Refactor for GitHub pages-
+* -Add a Jekyll page for each fortune datasource.-
+* -Add site navigation.-
+* Add additional fortune sources.
+* Automate the conversion of fortune data files into JSON files.
 * Image file & meme generator.
 * Add Facebook Open Graph, Instagram, Twitter Card integration.
 * Implement a webservice to return a single random fortune.
