@@ -20,7 +20,9 @@ new quote. Read the [full story on our About page][1].
 * <del>Refactor for GitHub pages</del>
 * <del>Add a Jekyll page for each fortune datasource.</del>
 * <del>Add site navigation.</del>
+* <del>Support dark mode.</del>
 * Add additional fortune sources.
+* Add a brutalist design, as an alternative of the minimalist design.
 * Automate the conversion of fortune data files into JSON files.
 * Image file & meme generator.
 * Add Facebook Open Graph, Instagram, Twitter Card integration.
