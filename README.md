@@ -50,7 +50,7 @@ You may also contribute data sets. Each contribution should contain:
   {"quote":"Avoid \"straight quotes\", in favor of “curly quotes” when possible."},
   {"quote":"“Prefer double-curly quotes and only use single curly quotes when ‘quoting inside’ a quote.”"},
   {"quote":"Don't use the straight apostrophe in punctuation! ’Twil be the death of you.”"},
-  {"quote":"Don't use <em>html markup</em>"},
+  {"quote":"Don’t use <em>html markup</em>"},
   {"quote":"Single newline characters like this-->\n are converted into <br> tags."},
   {"quote":"Double newline characters like this-->\n\n break the text into separate paragraphs with more whitespace."},
   {"quote":"The last quote in the JSON should not have a trailing comma to pass validation"}
