@@ -1,5 +1,6 @@
 var toggle = document.getElementById('toggle');
 var sidebar = document.getElementById('sidebar');
+var content = document.getElementById('main-content');
 var collapseSidebar = function (e) {
   if (sidebar.getAttribute('aria-expanded') !== 'false') {
     sidebar.setAttribute('aria-expanded', 'false');
@@ -9,16 +10,15 @@ var collapseSidebar = function (e) {
 var expandSidebar = function (e) {
   if (sidebar.getAttribute('aria-expanded') !== 'true') {
     sidebar.setAttribute('aria-expanded', 'true');
-    //sidebar.focus();
     announceText('sidebar expanded');
   }
 }
 var toggleSidebar = function (e) {
   if (sidebar.getAttribute('aria-expanded') === 'true') {
-    sidebar.blur();
+    collapseSidebar(e);
   }
   else {
-    sidebar.focus();
+    expandSidebar(e);
   }
 }
 
@@ -29,4 +29,7 @@ var announceText = function (str) {
 
 toggle.addEventListener('click', toggleSidebar, false);
 sidebar.addEventListener('focusin', expandSidebar, false);
+sidebar.addEventListener('touchend', expandSidebar, false);
 sidebar.addEventListener('focusout', collapseSidebar, false);
+content.addEventListener('focusin', collapseSidebar, false);
+content.addEventListener('touchend', collapseSidebar, false);
