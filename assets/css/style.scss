@@ -140,7 +140,6 @@ code {
   margin: 0;
   background: none;
   padding: 10px;
-  transition: all .2s ease-out;
 }
 
 #sidebar {
@@ -159,8 +158,9 @@ code {
   &[aria-expanded=false] {
     right: -17rem;
 
+    ~ #toggle,
     ~ #main-content {
-      width: 100%;
+      right: 0;
       transition: all .2s ease-out;
     }
   }
@@ -168,12 +168,9 @@ code {
   &[aria-expanded=true] {
     right: 0%;
 
-    ~ #toggle {
-      right: 17rem;
-    }
-
+    ~ #toggle,
     ~ #main-content {
-      width: calc(100% - 17rem);
+      right: 17rem;
       transition: all .2s ease-out;
     }
   }
