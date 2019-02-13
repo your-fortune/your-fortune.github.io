@@ -129,17 +129,45 @@ code {
   display: inline-block;
 }
 
+#refresh {
+  display: none;
+  .quote & {
+    display: block;
+  }
+}
+
+#refresh,
 #toggle {
+  box-sizing: border-box;
   position: fixed;
   z-index: 3;
-  right: 0;
-  bottom: 0;
   width: 40px;
   height: 40px;
   border: 0;
   margin: 0;
-  background: none;
+  background-color: transparent;
+  background-position: 50% 50%;
+  background-size: 20px 20px;
+  background-repeat: no-repeat;
   padding: 10px;
+  transition: all .2s ease-out;
+  opacity: 1;
+
+  &.ui-delay-load {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+#refresh {
+  right: 0;
+  bottom: 0;
+  margin-right: 41px;
+}
+
+#toggle {
+  right: 0;
+  bottom: 0;
 }
 
 #sidebar {
@@ -158,6 +186,7 @@ code {
   &[aria-expanded=false] {
     right: -17rem;
 
+    ~ #refresh,
     ~ #toggle,
     ~ #main-content {
       right: 0;
@@ -168,6 +197,7 @@ code {
   &[aria-expanded=true] {
     right: 0%;
 
+    ~ #refresh,
     ~ #toggle,
     ~ #main-content {
       right: 17rem;
@@ -251,4 +281,15 @@ nav {
   animation-delay: .5s;
   animation-fill-mode: both;
   animation-name: fadeInUp;
+}
+
+// https://css-tricks.com/restart-css-animation/
+.is-spinning {
+  animation: spin 1.2s ease-out;
+}
+
+@keyframes spin {
+  100%{
+    transform:rotate(180deg);
+  }
 }

@@ -27,6 +27,9 @@
 </ul>
 </nav>
 </section>
-<button id="toggle" aria-label="toggle sidebar">
+<button id="refresh" aria-label="get a new quote" class="ui-delay-load">
+  <img src="{{'/assets/images/refresh.svg' | append: cache_buster | relative_url }}" width="20" height="20"/>
+</button>
+<button id="toggle" aria-label="toggle sidebar" class="ui-delay-load">
 <img src="{{'/assets/images/logo-fortune.svg' | append: cache_buster | relative_url }}" width="20" height="20"/>
 </button>

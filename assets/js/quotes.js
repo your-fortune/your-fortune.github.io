@@ -1,3 +1,5 @@
+var refresh = document.getElementById('refresh');
+
 String.prototype.toHtml = function () {
   return this
     .replace(/`([^`]+?)`/g, '<code>$1</code>')
@@ -8,7 +10,7 @@ String.prototype.toParagraph = function () {
   var p = this
     .replace(/(\n){2,}/g, '</p><p>')
     .replace(/(<br>){2,}/g, '</p><p>');
-  return '<p>' + p + '</p>'
+  return '<p>' + p + '</p>';
 }
 Window.prototype.wasReloaded = function () {
   var perfEntries = performance.getEntriesByType("navigation");
@@ -73,6 +75,8 @@ var loadQuote = function (quoteSource) {
     c.innerHTML = '–&nbsp;' + quotes.data[i].author.toHtml();
     b.appendChild(c);
   }
+  var bb = b.cloneNode(true);
+  b.parentNode.replaceChild(bb, b);
 
   var x = i+1;
   var y = quotes.data.length;
@@ -118,3 +122,12 @@ addEventListener('popstate', function(e) {
     loadQuote(URL_HASH);
   }
 });
+
+refresh.addEventListener('click', function(e) {
+  refresh.blur();
+  refresh.querySelector('img').classList.add('is-spinning');
+  setTimeout(function() {
+    refresh.querySelector('img').classList.remove('is-spinning');
+  }, 1200);
+  loadQuote(RANDOM_SEED);
+}, false);

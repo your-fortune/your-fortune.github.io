@@ -1,6 +1,15 @@
 var toggle = document.getElementById('toggle');
 var sidebar = document.getElementById('sidebar');
 var content = document.getElementById('main-content');
+var hidden = document.querySelectorAll('.ui-delay-load');
+if (hidden.length) {
+  setTimeout(function () {
+    for (var i = hidden.length - 1; i >= 0; i--) {
+      hidden[i].classList.remove('ui-delay-load');
+    }
+  }, 1200);
+}
+
 var collapseSidebar = function (e) {
   if (sidebar.getAttribute('aria-expanded') !== 'false') {
     sidebar.setAttribute('aria-expanded', 'false');
@@ -18,7 +27,7 @@ var toggleSidebar = function (e) {
     collapseSidebar(e);
   }
   else {
-    expandSidebar(e);
+    sidebar.querySelector('nav li:first-child > a').focus();
   }
 }
 
