@@ -1,3 +1,5 @@
+'use strict';
+
 var refresh = document.getElementById('refresh');
 
 String.prototype.toHtml = function () {
@@ -52,18 +54,26 @@ var getRandomSeed = function(oldVal, maxVal) {
   while (oldVal === seed);
   return seed;
 }
-var loadQuote = function (quoteSource) {
+var getIndexFromUrlHash = function(maxVal) {
   var i = false;
-  var j = false;
   if (typeof window.location.hash.split('#')[1] !== 'undefined'
     && typeof parseInt(window.location.hash.split('#')[1], 10) === 'number') {
-    j = parseInt(window.location.hash.split('#')[1], 10) - 1;
-    if (j < quotes.data.length) {
-      i = j;
+    i = parseInt(window.location.hash.split('#')[1], 10) - 1;
+    if (i >= maxVal) {
+      i = false;
     }
   }
-  if (i === false || (window.wasReloaded() && quoteSource === RANDOM_SEED)) {
-    i = getRandomSeed(j, quotes.data.length);
+  return i;
+}
+var loadQuote = function (quoteSource) {
+  var i; // array index
+  var k = quotes.data.length;
+  var j = getIndexFromUrlHash(k);
+  if (j === false || quoteSource === RANDOM_SEED) {
+    i = getRandomSeed(j, k);
+  }
+  else {
+    i = j;
   }
 
   var b = document.getElementsByTagName("blockquote")[0];
@@ -75,16 +85,16 @@ var loadQuote = function (quoteSource) {
     c.innerHTML = '–&nbsp;' + quotes.data[i].author.toHtml();
     b.appendChild(c);
   }
+  // Replace the HTML node to trigger CSS animations.
   var bb = b.cloneNode(true);
   b.parentNode.replaceChild(bb, b);
 
   var x = i+1;
-  var y = quotes.data.length;
   var z = document.getElementsByClassName("count");
-  var t = updatePageTitle(x, y);
+  var t = updatePageTitle(x, k);
 
   [].forEach.call(z, function (el) {
-    el.innerHTML = x + ' of ' + y + '.';
+    el.innerHTML = x + ' of ' + k + '.';
   });
 
   if(history.pushState) {
