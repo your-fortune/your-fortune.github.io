@@ -107,7 +107,8 @@ var loadQuote = function (quoteSource) {
 
 addEventListener('pageshow', function(e) {
   if (e) {
-    // Code to handle back button or prevent from navigation
+    // If the page was refreshed manually, load a random quote, otherwise
+    // load the quote specified on the URL hash, if it exists.
     if (window.wasReloaded()) {
       loadQuote(RANDOM_SEED);
     }
@@ -118,7 +119,8 @@ addEventListener('pageshow', function(e) {
 });
 addEventListener('popstate', function(e) {
   if (e) {
-    // Code to handle back button or prevent from navigation
+    // Popstate runs when navigating with browser's back and forward buttons,
+    // and therefore load the quote from the URL hash.
     loadQuote(URL_HASH);
   }
 });
