@@ -62,7 +62,7 @@ var loadQuote = function (quoteSource) {
       i = j;
     }
   }
-  if (!i || (window.wasReloaded() && quoteSource === RANDOM_SEED)) {
+  if (i === false || (window.wasReloaded() && quoteSource === RANDOM_SEED)) {
     i = getRandomSeed(j, quotes.data.length);
   }
 
