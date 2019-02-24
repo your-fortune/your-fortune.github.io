@@ -12,7 +12,7 @@
 ## Introduction
 
 This project began as a server-side PHP script, and morphed into a
-client-side javascript application.  Each page reload presents a 
+client-side javascript application.  Each page reload presents a
 new quote. Read the [full story on our About page][1].
 
 ## Roadmap
@@ -21,6 +21,7 @@ new quote. Read the [full story on our About page][1].
 * <del>Add a Jekyll page for each fortune datasource.</del>
 * <del>Add site navigation.</del>
 * <del>Support dark mode.</del>
+* <del>Support remote JSON.</del>
 * Add additional fortune sources.
 * Add a brutalist design, as an alternative of the minimalist design.
 * Automate the conversion of fortune data files into JSON files.
@@ -37,12 +38,12 @@ and [Jekyll][3] documentation).
 You may also contribute data sets. Each contribution should contain:
 
 * A JSON-formatted dataset file containing quotes. The file should be
-  placed inside `_includes/data/`, and named to something relevant, 
+  placed inside `data/`, and named to something relevant,
   ensure your JSON file [passes JSONlint validation][4], and is
   formatted with one quote per line.
 
   The formatting rules are roughly as follows:
-  
+
   ```
   {"data":[
   {"quote":"First quote", "author": "Someone"},
@@ -61,7 +62,7 @@ You may also contribute data sets. Each contribution should contain:
 
 * A page for rendering the dataset in the website, placed inside `_pages/`.
   The following frontmatter is required:
-  
+
   ```
   ---
   layout: quote
@@ -71,7 +72,25 @@ You may also contribute data sets. Each contribution should contain:
   dataset: data/example.json
   ---
   ```
-  
+
+  Multiple datasets can be provided as follows:
+
+  ```
+  dataset:
+    - data/example1.json
+    - data/example1.json
+  ```
+
+  Remote datasets can be loaded as well, as long as the origin has a wildcard
+  CORS header in the responses. Referencing JSON files from files hosted with
+  GitHub Page and/or Raw GitHub (raw.githubusercontent.com) both work.
+
+  ```
+  dataset:
+    - https://your-fortune.github.io/data/example.js
+    - https://raw.githubusercontent.com/your-fortune/your-fortune.github.io/master/data/example.json
+  ```
+
   Additionally, you may provide `style: example.css` to load a custom
   stylesheet placed in `assets/css/example.scss` containing special
   webfont or font-size declarations. (Ex. [steven-wright.scss][5]).

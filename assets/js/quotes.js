@@ -43,9 +43,6 @@ var updatePageTitle = function(x, y) {
     .replace(/ \· /, ' [' + x + ' of ' + y + '] · ')
   return t;
 }
-
-var URL_HASH = 0;
-var RANDOM_SEED = 1;
 var getRandomSeed = function(oldVal, maxVal) {
   var seed;
   do {
@@ -56,29 +53,61 @@ var getRandomSeed = function(oldVal, maxVal) {
 }
 var getIndexFromUrlHash = function(maxVal) {
   var i = false;
-  if (typeof window.location.hash.split('#')[1] !== 'undefined'
-    && typeof parseInt(window.location.hash.split('#')[1], 10) === 'number') {
-    i = parseInt(window.location.hash.split('#')[1], 10) - 1;
-    if (i >= maxVal) {
-      i = false;
+  var h = window.location.hash.split('#')[1];
+  if (typeof h !== 'undefined') {
+    if (h.indexOf('.') >= 0) {
+      h = h.split('.')[1];
+    }
+    if (typeof parseInt(h, 10) === 'number') {
+      i = parseInt(h, 10) - 1;
+      if (i >= maxVal) {
+        i = false;
+      }
     }
   }
   return i;
 }
 
+var getQuoteSourceFromUrlHash = function(maxVal) {
+  var i = false;
+  console.log('getQuoteSourceFromUrlHash: maxVal=' + maxVal);
+  var h = window.location.hash.split('#')[1];
+  if (typeof h !== 'undefined') {
+    if (h.indexOf('.') >= 0) {
+      h = h.split('.')[0];
+    } else {
+      h = 1;
+    }
+    if (typeof parseInt(h, 10) === 'number') {
+      i = parseInt(h, 10) - 1;
+      if (i >= maxVal) {
+        i = false;
+      }
+    }
+  }
+  return i;
+}
+
+var URL_HASH = 0;
+var RANDOM_SEED = 1;
 var loadQuotes = function (refreshFrom) {
-  console.log(typeof quoteSources);
-  console.log(quoteSources);
   if (typeof quoteSources != 'object' || !quoteSources.length > 0) {
     console.error('the quoteSources Javascript constant must be defined as a non-empty array literal before calling quotes.js');
   }
-  // If there are multiple quoteSources, load from a randomly selected source.
-  var seed = getRandomSeed(null, quoteSources.length);
-  loadJSON(quoteSources[seed], function(error, data) {
+  var k = quoteSources.length;
+  var i = getQuoteSourceFromUrlHash(k);
+  if (i === false || refreshFrom === RANDOM_SEED) {
+    if (i === 0) {
+      i = false;
+    }
+    i = getRandomSeed(i, k);
+  }
+
+  loadJSON(quoteSources[i], function(error, data) {
     if (error) {
       console.error(error);
     } else {
-      loadQuote(seed, data, refreshFrom);
+      loadQuote(i+1, data, refreshFrom);
     }
   });
 }
@@ -113,12 +142,14 @@ var loadQuote = function (selectedSource, quotes, refreshFrom) {
   var bb = b.cloneNode(true);
   b.parentNode.replaceChild(bb, b);
 
-  if (selectedSource > 1) {
-    k = 'many';
-  }
-
   var x = i+1;
   var z = document.getElementsByClassName("count");
+
+  if (selectedSource > 1) {
+    k = 'many';
+    x = selectedSource + '.' + x;
+  }
+
   var t = updatePageTitle(x, k);
 
   [].forEach.call(z, function (el) {
