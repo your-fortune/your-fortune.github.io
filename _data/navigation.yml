@@ -3,6 +3,9 @@ pages:
   - title: All fortunes
     url: /all
 
+  - title: Motivate
+    url: /motivate
+
   - title: Miscellaneous
     url: /
 
