@@ -17,17 +17,21 @@ new quote. Read the [full story on our About page][1].
 
 ## Roadmap
 
-* <del>Refactor for GitHub pages</del>
+* Ongoing: Add additional fortune sources.
+* <del>Build on GitHub pages</del>
 * <del>Add a Jekyll page for each fortune datasource.</del>
 * <del>Add site navigation.</del>
 * <del>Support dark mode.</del>
+* <del>Poorman's API: expose public fortune files as JSON.</del>
+* <del>Support multiple sources on a single page.</del>
 * <del>Support remote JSON.</del>
-* Add additional fortune sources.
+* Move site to a custom domain.
+* Support JSONP from remote APIs.
 * Add a brutalist design, as an alternative of the minimalist design.
 * Automate the conversion of fortune data files into JSON files.
 * Image file & meme generator.
 * Add Facebook Open Graph, Instagram, Twitter Card integration.
-* Implement a webservice to return a single random fortune.
+* Implement an API to return a single random fortune.
     * This probably means moving off of static GitHub Pages.
 
 ## Contributing
