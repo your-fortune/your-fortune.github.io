@@ -25,6 +25,7 @@ new quote. Read the [full story on our About page][1].
 * <del>Poorman's API: expose public fortune files as JSON.</del>
 * <del>Support multiple sources on a single page.</del>
 * <del>Support remote JSON.</del>
+* <del>Create a reusable Jekyll theme, move styles/scripts to a separate repository.</del>
 * Move site to a custom domain.
 * Support JSONP from remote APIs.
 * Add a brutalist design, as an alternative of the minimalist design.
