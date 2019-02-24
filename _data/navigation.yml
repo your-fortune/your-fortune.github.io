@@ -1,5 +1,8 @@
 title: Main Menu
 pages:
+  - title: All fortunes
+    url: /all
+
   - title: Miscellaneous
     url: /
 
