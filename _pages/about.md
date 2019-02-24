@@ -15,12 +15,12 @@ on the command line upon login, into rich HTML for the Web.
 There were originally only two fortune configurations: one that displayed
 messages from the default fortune command on the Linux server where the site
 was hosted, and the second from a custom set of one-liner jokes by American
-comedian Steven Wright, affectionately referred to as “aphorisms” in
+comedian Steven Wright, affectionately referred to as *aphorisms* in
 [the initial blog post][2].
 
 There were plans to make the fortunes available via RSS, however after the
 initial development, the idea went ignored for years. In September of 2018,
-some visual formatting enhancements were added including as modern Web fonts
+some visual formatting enhancements were added including modern Web fonts
 and CSS transition effects when the fortune loads in the browser.
 
 In January of 2019, the project concept evolved into an entire website,
