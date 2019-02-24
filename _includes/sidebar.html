@@ -8,7 +8,7 @@
 </div>
 <section id="sidebar" aria-expanded="false" tabindex="0" aria-label="sidebar">
 <div class="about">
-<div class="description">{{ description }}</div>
+<div class="description">{{ description | markdownify }}</div>
 {%- if page.layout == 'quote' %}
 <div class="action"><em><span class="count"></span> {{ site.fortune.action }}</em></div>
 {%- endif %}
