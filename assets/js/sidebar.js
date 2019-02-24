@@ -27,7 +27,7 @@ var toggleSidebar = function (e) {
     collapseSidebar(e);
   }
   else {
-    sidebar.querySelector('nav li:first-child > a').focus();
+    sidebar.querySelector('nav').focus();
   }
 }
 
