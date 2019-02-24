@@ -82,7 +82,7 @@ You may also contribute data sets. Each contribution should contain:
   ```
   dataset:
     - data/example1.json
-    - data/example1.json
+    - data/example2.json
   ```
 
   Remote datasets can be loaded as well, as long as the origin has a wildcard
@@ -91,7 +91,7 @@ You may also contribute data sets. Each contribution should contain:
 
   ```
   dataset:
-    - https://your-fortune.github.io/data/example.js
+    - https://your-fortune.github.io/data/example.json
     - https://raw.githubusercontent.com/your-fortune/your-fortune.github.io/master/data/example.json
   ```
 
