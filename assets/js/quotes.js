@@ -65,11 +65,29 @@ var getIndexFromUrlHash = function(maxVal) {
   }
   return i;
 }
-var loadQuote = function (quoteSource) {
+
+var loadQuotes = function (refreshFrom) {
+  console.log(typeof quoteSources);
+  console.log(quoteSources);
+  if (typeof quoteSources != 'object' || !quoteSources.length > 0) {
+    console.error('the quoteSources Javascript constant must be defined as a non-empty array literal before calling quotes.js');
+  }
+  // If there are multiple quoteSources, load from a randomly selected source.
+  var seed = getRandomSeed(null, quoteSources.length);
+  loadJSON(quoteSources[seed], function(error, data) {
+    if (error) {
+      console.error(error);
+    } else {
+      loadQuote(seed, data, refreshFrom);
+    }
+  });
+}
+
+var loadQuote = function (selectedSource, quotes, refreshFrom) {
   var i; // array index
   var k = quotes.data.length;
   var j = getIndexFromUrlHash(k);
-  if (j === false || quoteSource === RANDOM_SEED) {
+  if (j === false || refreshFrom === RANDOM_SEED) {
     i = getRandomSeed(j, k);
   }
   else {
@@ -84,10 +102,20 @@ var loadQuote = function (quoteSource) {
     var c = document.createElement("cite");
     c.innerHTML = '–&nbsp;' + quotes.data[i].author.toHtml();
     b.appendChild(c);
+
+    announceText( q + '. Quotation by ' + quotes.data[i].author);
   }
+  else {
+    announceText(q);
+  }
+
   // Replace the HTML node to trigger CSS animations.
   var bb = b.cloneNode(true);
   b.parentNode.replaceChild(bb, b);
+
+  if (selectedSource > 1) {
+    k = 'many';
+  }
 
   var x = i+1;
   var z = document.getElementsByClassName("count");
@@ -97,8 +125,8 @@ var loadQuote = function (quoteSource) {
     el.innerHTML = x + ' of ' + k + '.';
   });
 
-  if(history.pushState) {
-    if (j === false || quoteSource == URL_HASH) {
+  if (history.pushState) {
+    if (j === false || refreshFrom == URL_HASH) {
       history.replaceState(null, t, '#' + x);
     }
     else if (window.wasReloaded()) {
@@ -115,15 +143,41 @@ var loadQuote = function (quoteSource) {
   document.title = t;
 }
 
+var loadJSON = function(url, callback) {
+  var req = new XMLHttpRequest();
+
+  req.addEventListener('load', onLoad);
+  req.addEventListener('error', onFail);
+  req.addEventListener('abort', onFail);
+
+  req.open('GET', url);
+  req.overrideMimeType('application/json');
+  req.send();
+
+  function onLoad(event) {
+    if (req.status >= 400) {
+      onFail(event);
+    } else {
+      var json = JSON.parse(this.responseText);
+      callback(null, json);
+    }
+  }
+
+  function onFail(event) {
+    console.error(event);
+    callback(new Error('JSON data could not be loaded from: ' + url));
+  }
+}
+
 addEventListener('pageshow', function(e) {
   if (e) {
     // If the page was refreshed manually, load a random quote, otherwise
     // load the quote specified on the URL hash, if it exists.
     if (window.wasReloaded()) {
-      loadQuote(RANDOM_SEED);
+      loadQuotes(RANDOM_SEED);
     }
     else {
-      loadQuote(URL_HASH);
+      loadQuotes(URL_HASH);
     }
   }
 });
@@ -131,7 +185,7 @@ addEventListener('popstate', function(e) {
   if (e) {
     // Popstate runs when navigating with browser's back and forward buttons,
     // and therefore load the quote from the URL hash.
-    loadQuote(URL_HASH);
+    loadQuotes(URL_HASH);
   }
 });
 
@@ -141,5 +195,5 @@ refresh.addEventListener('click', function(e) {
   setTimeout(function() {
     refresh.querySelector('img').classList.remove('is-spinning');
   }, 1200);
-  loadQuote(RANDOM_SEED);
+  loadQuotes(RANDOM_SEED);
 }, false);
