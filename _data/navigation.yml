@@ -18,6 +18,12 @@ pages:
   - title: Paul Graham
     url: /paul-graham
 
+  - title: The Rubaiyat of Omar Khayyam
+    url: /rubaiyat
+
+  - title: The Rubaiyat of Omar Khayyam, 5th Edition
+    url: /rubaiyat-v5
+
   - title: Steven Wright
     url: /steven-wright
 
