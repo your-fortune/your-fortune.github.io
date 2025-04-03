@@ -9,6 +9,7 @@ dataset:
     - data/murphys-law.json
     - data/fortunes.json
     - data/paul-graham.json
+    - data/rubaiyat.json
     - data/steven-wright.json
     - data/tao-te-ching.json
 style: misc.css
